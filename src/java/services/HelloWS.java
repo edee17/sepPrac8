@@ -12,6 +12,7 @@ import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.PUT;
+import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 
 /**
@@ -33,14 +34,15 @@ public class HelloWS {
 
     /**
      * Retrieves representation of an instance of services.HelloWS
+     * @param username
      * @return an instance of java.lang.String
      */
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    public String sayHello() {
+    public String sayHello(@QueryParam("username") String username) {
         //TODO return proper representation object
         //throw new UnsupportedOperationException();
-        return "Hello there!";
+        return "Hello there!..." + username;
     }
 
     /**
